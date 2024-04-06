@@ -1,11 +1,10 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float force;
+    public Camera Cam;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Cam.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
+
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
